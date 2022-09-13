@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="cursoAyiJPA" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <properties>
+
+            <!-- Datos de la conexión a la DB -->
+
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/curso_ayi_jpaaa?serverTimezone=America/Santiago"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <!-- MySQL8Dialect, es porque estamos usando la versión 8 de MySQL -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+
+            <!-- Para crear las tablas a partir de la entidad automáticamente -->
+            <!--             <property name="hibernate.hbm2ddl.auto" value="update"/>-->
+            <!-- validate, update, create, create-drop -->
+
+        </properties>
+    </persistence-unit>
+</persistence>
